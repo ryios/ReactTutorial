@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://petpass-swift/./src/app/scss/appStyles.scss"],"names":[],"mappings":"AAAA;EACI,sBAAsB;EACtB,YAAY","file":"app_c57dbf2e46b95403a87f.css","sourcesContent":["body {\r\n    background-color: pink;\r\n    color: white;\r\n}"],"sourceRoot":""}
