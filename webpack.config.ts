@@ -3,6 +3,7 @@ import Glob from 'glob';
 import webpack, { EvalSourceMapDevToolPlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';  //generate the index.html and handle script inserts (local dev only, not useful in production) it could be though, circle back
 import MiniCssExtractPlugin, { loader } from 'mini-css-extract-plugin'; //extract css chunks into css files (after sass etc processing)
+//------------------------
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 //some reused vars for webpack config
@@ -79,7 +80,7 @@ let createWebPackConfig = (env: any): webpack.Configuration => {
               // translates CSS into CommonJS modules
               loader: 'css-loader',
               options: {
-                modules: false,
+                modules: true,
                 esModule: false,
                 importLoaders: 1
               }
@@ -137,7 +138,7 @@ let createWebPackConfig = (env: any): webpack.Configuration => {
           },
           vendorScripts: {
             test: nodeModulesRegex,
-            filename: 'vendorBundle_[chunkhash].js'
+            filename: 'vendorBundle_[chunkhash].js',
           }
         }
       }
